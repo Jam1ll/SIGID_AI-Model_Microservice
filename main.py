@@ -16,8 +16,11 @@ class PeticionPrediccion(BaseModel):
     meses_a_predecir: int = 1
 
 #
-# ENDPOINT
+# ENDPOINTS
 #
+@app.get("/")
+def home():
+    return {"mensaje": "API de Predicción de Stock activa"}
 
 @app.post("/predict")
 def predecir_stock(peticion: PeticionPrediccion):
